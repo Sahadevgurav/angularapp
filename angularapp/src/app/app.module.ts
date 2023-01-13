@@ -8,6 +8,9 @@ import { ServersComponent } from './servers/servers.component';
 import { FormsModule } from '@angular/forms';
 import { DemodirectivesComponent } from './demodirectives/demodirectives.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { AttriComponent } from './attri/attri.component';
+import { CustdirDirective } from './custdir.directive';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
@@ -17,6 +20,9 @@ import { NgswitchComponent } from './ngswitch/ngswitch.component';
     ServersComponent,
     DemodirectivesComponent,
     NgswitchComponent,
+    AttriComponent,
+    CustdirDirective,
+    DemoComponent,
      
   ],
   imports: [

@@ -21,10 +21,24 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>-->
-<app-servers></app-servers>
+<!-- <app-servers></app-servers> -->
 
-<app-demodirectives></app-demodirectives> 
+<!-- <app-demodirectives></app-demodirectives>  -->
 <!--<button type="button" class="btn btn-primary">Primary</button>-->
 <!--<app-server></app-server>-->
 
+<app-attri></app-attri>
+
+<ul *ngFor="let f of foods">
+  <li>{{f}}</li>
+</ul>
+
+<div >
+
+<app-demo  (foodevent)="getDataFromChild($event)"></app-demo>
+
+</div>
+<!-- <app-demo [myinputMsg]="uname"></app-demo> -->
 <router-outlet></router-outlet>
+
+
