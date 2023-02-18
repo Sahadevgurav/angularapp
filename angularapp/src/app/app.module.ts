@@ -11,6 +11,7 @@ import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { AttriComponent } from './attri/attri.component';
 import { CustdirDirective } from './custdir.directive';
 import { DemoComponent } from './demo/demo.component';
+import { HooksComponent } from './hooks/hooks.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { DemoComponent } from './demo/demo.component';
     AttriComponent,
     CustdirDirective,
     DemoComponent,
+    HooksComponent,
      
   ],
   imports: [

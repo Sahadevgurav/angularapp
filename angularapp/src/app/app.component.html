@@ -28,7 +28,7 @@
 <!--<app-server></app-server>-->
 
 <app-attri></app-attri>
-
+   
 <ul *ngFor="let f of foods">
   <li>{{f}}</li>
 </ul>
@@ -39,6 +39,16 @@
 
 </div>
 <!-- <app-demo [myinputMsg]="uname"></app-demo> -->
+
+<select (change)="uid=sid.value" #sid>
+<option selected disabled> No value selected </option>
+<option [value]="id" *ngFor="let id of[1,2,3,4]">
+  {{id}}
+</option>
+</select>
+
+
+<app-hooks [userid]="uid"></app-hooks>
 <router-outlet></router-outlet>
 
 

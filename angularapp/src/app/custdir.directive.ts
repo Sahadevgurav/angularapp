@@ -12,4 +12,4 @@ export class CustdirDirective {
     
    render.setStyle(el.nativeElement,'backgroundColor','yellow');
   }
-}
+}  

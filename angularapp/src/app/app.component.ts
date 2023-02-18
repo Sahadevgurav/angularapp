@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Batch 4';
+  public uid: number;
+  title = 'Angular Batch 4';  
   uname = 'I am from app component';
   EmployeeRecords: any = [
     {
