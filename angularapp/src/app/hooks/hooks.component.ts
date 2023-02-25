@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Product } from '../models/product';
 
 @Component({
@@ -6,7 +6,7 @@ import { Product } from '../models/product';
   templateUrl: './hooks.component.html',
   styleUrls: ['./hooks.component.css']
 })
-export class HooksComponent implements OnInit, OnChanges, DoCheck{
+export class HooksComponent implements OnInit, OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
   pi;
   @Input() userid: number;
 
@@ -15,39 +15,71 @@ export class HooksComponent implements OnInit, OnChanges, DoCheck{
 
   @Input() product: Product;
 
+  @ContentChild("child",{static:false}) ContentChild: ElementRef;
+  @ViewChild("childhook",{static : false}) viewChild:ElementRef;
+
   constructor() {
     this.pi = 3.14;
-    console.log("HooksComponent constructor called ");
+   // console.log("HooksComponent constructor called ");
+   console.log('constructor called ');
+   
 
   }
-  ngDoCheck(): void {
-    console.log('ngDoCheck called');
+  ngAfterViewChecked(): void {
+    console.log('ngAfterViewChecked called');
+    this.viewChild.nativeElement.setAttribute('style', `color :${this.parentData}`);
+  }
+  ngAfterViewInit(): void {
+    console.log( 'ngAfterViewInit called',this.viewChild);
+    this.viewChild.nativeElement.setAttribute('style', `color :${this.parentData}`);
     
   }
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked called');
+    this.ContentChild.nativeElement.setAttribute('style', `color :${this.parentData}`);
+    
+  }
+ 
+  ngAfterContentInit(): void {
+   console.log('ngAfterContentInit',this.ContentChild);
+  //  this.ContentChild.nativeElement.setAttribute('style', 'color:green');
+  // this.ContentChild.nativeElement.setAttribute('style', `color :${this.parentData}`);
+  console.log('view int acess',this.viewChild);
+  
+   
+  }
+   ngDoCheck(): void {
+     console.log('ngDoCheck called',this.ContentChild);
+    
+   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("HooksComponent ngOnChanges called ");
+    //console.log("HooksComponent ngOnChanges called ");
+    console.log('ngOnChanges called');
+    
     // console.log(this.parentData);
 
-    for (const propname in changes) {
-      const prop = changes[propname];
+    // for (const propname in changes) {
+    //   const prop = changes[propname];
 
-      const { previousValue, currentValue, firstChange } = prop;
+    //   const { previousValue, currentValue, firstChange } = prop;
 
-      console.log(`Prop name ${propname}`);
-      console.log(`Previous Value ${previousValue}`);
-      console.log(`Current Value ${currentValue}`);
-      console.log(`First Change ${firstChange}`);
-      console.log("------------------------------");
+    //   console.log(`Prop name ${propname}`);
+    //   console.log(`Previous Value ${previousValue}`);
+    //   console.log(`Current Value ${currentValue}`);
+    //   console.log(`First Change ${firstChange}`);
+    //   console.log("------------------------------");
 
-    }
+    // }
 
     // console.log("HooksComponent ngOnChanges called");
 
   }
   // hooks
   ngOnInit() {
-    console.log("HooksComponent ngOnInit called ");
+    //console.log("HooksComponent ngOnInit called ");
     //api
+    console.log('ngOnInit called');
+    
   }
 
 }

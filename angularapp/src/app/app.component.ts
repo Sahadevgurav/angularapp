@@ -7,7 +7,7 @@ import { Product } from './models/product';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  data;
+  data:string = 'red';
   name: string;
   price:number;
   product: Product = new Product();
