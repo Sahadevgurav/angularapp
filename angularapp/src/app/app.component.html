@@ -53,12 +53,13 @@
 <p>Product Name: <input type="text" placeholder="Enter product name" [(ngModel)]="name"></p>
 <p>Product Price: <input type="text" placeholder="Enter product price" [(ngModel)]="price"></p>
 <button class="btn btn-primary" (click)="updateProduct()">Update product</button>
-<app-hooks [userid]="uid" [parentData]="data" [product]="product">
+<app-hooks *ngIf="appchildExit  " [userid]="uid" [parentData]="data" [product]="product">
   <h1 #child> This is child content comming from parent component </h1>
 </app-hooks>
 </div>
 </div>
 <!-- <app-dirassign></app-dirassign> -->
+<button class="btn btn-danger" (click)="destroy()">Destroy component</button>
 <router-outlet></router-outlet>
 
 

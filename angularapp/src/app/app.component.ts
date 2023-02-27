@@ -24,6 +24,11 @@ export class AppComponent {
   ]
 foods: string[] = [];
 
+appchildExit : boolean = true;
+destroy() {
+this.appchildExit = false;
+}
+
   getDataFromChild(value) {
 
 // console.log(value);
