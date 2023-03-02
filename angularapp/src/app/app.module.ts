@@ -13,6 +13,7 @@ import { CustdirDirective } from './custdir.directive';
 import { DemoComponent } from './demo/demo.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { DirassignComponent } from './dirassign/dirassign.component';
+import { SimpletemplateformComponent } from './simpletemplateform/simpletemplateform.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { DirassignComponent } from './dirassign/dirassign.component';
     DemoComponent,
     HooksComponent,
     DirassignComponent,
+    SimpletemplateformComponent,
      
   ],
   imports: [

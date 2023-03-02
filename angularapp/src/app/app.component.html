@@ -29,7 +29,7 @@
 
 <!-- <app-attri></app-attri> -->
    
-<ul *ngFor="let f of foods">
+<!-- ul *ngFor="let f of foods">
   <li>{{f}}</li>
 </ul>
 
@@ -38,9 +38,9 @@
 <app-demo  (foodevent)="getDataFromChild($event)"></app-demo>
 
 </div>
-<!-- <app-demo [myinputMsg]="uname"></app-demo> -->
+<app-demo [myinputMsg]="uname"></app-demo> 
 
-<select (change)="uid=sid.value" #sid>
+ <select (change)="uid=sid.value" #sid>
 <option selected disabled> No value selected </option>
 <option [value]="id" *ngFor="let id of[1,2,3,4]">
   {{id}}
@@ -55,11 +55,13 @@
 <button class="btn btn-primary" (click)="updateProduct()">Update product</button>
 <app-hooks *ngIf="appchildExit  " [userid]="uid" [parentData]="data" [product]="product">
   <h1 #child> This is child content comming from parent component </h1>
-</app-hooks>
-</div>
-</div>
+</app-hooks> --> 
+<!-- </div>
+</div> -->
 <!-- <app-dirassign></app-dirassign> -->
-<button class="btn btn-danger" (click)="destroy()">Destroy component</button>
+<!-- <button class="btn btn-danger" (click)="destroy()">Destroy component</button> -->
+
+<app-simpletemplateform></app-simpletemplateform>
 <router-outlet></router-outlet>
 
 
